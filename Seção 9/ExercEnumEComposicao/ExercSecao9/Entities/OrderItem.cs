@@ -2,19 +2,26 @@
 
 public class OrderItem
 {
-    public int quantity { get; set; }
-    public double price { get; set; }
+    public int Quantity { get; set; }
+    public double Price { get; set; }
 
     public Product Product { get; set; }
 
-    public OrderItem(int quantity, double price)
+    public OrderItem(int quantity, double price, Product product)
     {
-        this.quantity = quantity;
-        this.price = price;
+        this.Quantity = quantity;
+        this.Price = price;
+        Product = product;
     }
 
     public double SubTotal()
     {
-        return price * quantity;
+        return Price * Quantity;
+    }
+
+    public override string ToString()
+    {
+        return Product.Name + ", $" + Price.ToString("F2") + ", Quantity: " + Quantity + ", Subtotal: " +
+               SubTotal().ToString("F2");
     }
 }
