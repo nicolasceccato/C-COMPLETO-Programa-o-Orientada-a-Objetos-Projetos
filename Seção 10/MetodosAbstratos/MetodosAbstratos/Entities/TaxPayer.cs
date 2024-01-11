@@ -2,12 +2,12 @@
 
 public abstract class TaxPayer
 {
-    public string Nome { get; set; }
+    public string Name { get; set; }
     public double AnnualIncome { get; set; }
 
-    public TaxPayer(string nome, double annualIncome)
+    public TaxPayer(string name, double annualIncome)
     {
-        Nome = nome;
+        Name = name;
         AnnualIncome = annualIncome;
     }
 

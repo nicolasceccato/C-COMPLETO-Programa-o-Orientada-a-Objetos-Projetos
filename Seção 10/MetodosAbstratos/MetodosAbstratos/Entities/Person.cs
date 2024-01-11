@@ -14,11 +14,11 @@ public class Person : TaxPayer
         double value = 0;
         if (AnnualIncome < 20000)
         {
-            value = 20000 * 0.15;
+            value = AnnualIncome * 0.15;
         }
         else
         {
-            value = 20000 * 0.25;
+            value = AnnualIncome * 0.25;
         }
 
         if (HealthSpending > 0)

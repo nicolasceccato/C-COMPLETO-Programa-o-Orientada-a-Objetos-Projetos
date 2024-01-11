@@ -4,7 +4,7 @@ public class Company : TaxPayer
 {
     public int NumberOfEmployees { get; set; }
 
-    public Company(int numberOfEmployees, string nome, double annualIncome) : base(nome, annualIncome)
+    public Company(string nome, double annualIncome, int numberOfEmployees) : base(nome, annualIncome)
     {
         NumberOfEmployees = numberOfEmployees;
     }
