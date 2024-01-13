@@ -1,16 +1,21 @@
-﻿namespace Xadrez.Tabuleiro;
-
-public class Tabuleiro
+﻿namespace tabuleiro
 {
-    public int Linhas { get; set; }
-    public int Colunas { get; set; }
-    
-    private Peca[,] Pecas;
-
-    public Tabuleiro(int linhas, int colunas)
+    class Tabuleiro
     {
-        Linhas = linhas;
-        Colunas = colunas;
-        Pecas = new Peca[linhas, colunas];
+        public int linhas { get; set; }
+        public int colunas { get; set; }
+        private Peca[,] pecas;
+
+        public Tabuleiro(int linhas, int colunas)
+        {
+            this.linhas = linhas;
+            this.colunas = colunas;
+            pecas = new Peca[linhas, colunas];
+        }
+
+        public Peca peca(int linha, int coluna)
+        {
+            return pecas[linha, coluna];
+        }
     }
 }

@@ -1,18 +1,21 @@
-﻿namespace Xadrez.Tabuleiro;
-
-public class Posicao
+﻿namespace tabuleiro
 {
-    public int Linha { get; set; }
-    public int Coluna { get; set; }
-
-    public Posicao(int linha, int coluna)
+    class Posicao
     {
-        Linha = linha;
-        Coluna = coluna;
-    }
+        public int linha { get; set; }
+        public int coluna { get; set; }
 
-    public override string ToString()
-    {
-        return Linha + ", " + Coluna;
+        public Posicao(int linha, int coluna)
+        {
+            this.linha = linha;
+            this.coluna = coluna;
+        }
+
+        public override string ToString()
+        {
+            return linha
+                   + ", "
+                   + coluna;
+        }
     }
 }

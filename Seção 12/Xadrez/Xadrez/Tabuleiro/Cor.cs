@@ -1,7 +1,8 @@
-﻿namespace Xadrez.Tabuleiro;
-
-public enum Cor : int
+﻿namespace tabuleiro
 {
-    Branca = 0,
-    Preta = 1
+    enum Cor : int
+    {
+        Branca = 0,
+        Preta = 1
+    }
 }
