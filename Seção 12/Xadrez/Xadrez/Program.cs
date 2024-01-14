@@ -11,16 +11,20 @@ namespace Xadrez // Note: actual namespace depends on the project name.
         {
             try
             {
-                Tabuleiro tabuleiro = new Tabuleiro(8, 8);
-                tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(0, 0));
-                tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Preta), new Posicao(1, 3));
-                tabuleiro.colocarPeca(new Rei(tabuleiro, Cor.Preta), new Posicao(0, 2));
+                PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
+                while (!partidaDeXadrez.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partidaDeXadrez.tab);
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                tabuleiro.colocarPeca(new Torre(tabuleiro, Cor.Branca), new Posicao(3, 5));
-
-
-                Tela.imprimirTabuleiro(tabuleiro);
-                Console.ReadLine();
+                    partidaDeXadrez.executaMovimento(origem, destino);
+                }
+                
             }
             catch (TabuleiroException e)
             {
