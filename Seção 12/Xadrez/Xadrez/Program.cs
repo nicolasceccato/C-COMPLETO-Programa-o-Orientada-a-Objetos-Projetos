@@ -5,31 +5,41 @@ using xadrez_console;
 
 namespace Xadrez // Note: actual namespace depends on the project name.
 {
-    internal class Program
+    class Program
     {
         static void Main(string[] args)
         {
             try
             {
-                PartidaDeXadrez partidaDeXadrez = new PartidaDeXadrez();
-                while (!partidaDeXadrez.terminada)
+                PartidaDeXadrez partida = new PartidaDeXadrez();
+
+                while (!partida.terminada)
                 {
                     Console.Clear();
-                    Tela.imprimirTabuleiro(partidaDeXadrez.tab);
+                    Tela.imprimirTabuleiro(partida.tab);
+
                     Console.WriteLine();
                     Console.Write("Origem: ");
                     Posicao origem = Tela.lerPosicaoXadrez().toPosicao();
+
+                    bool[,] posicoesPossiveis = partida.tab.peca(origem).movimentosPossiveis();
+
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab, posicoesPossiveis);
+
+                    Console.WriteLine();
                     Console.Write("Destino: ");
                     Posicao destino = Tela.lerPosicaoXadrez().toPosicao();
 
-                    partidaDeXadrez.executaMovimento(origem, destino);
+                    partida.executaMovimento(origem, destino);
                 }
-                
             }
             catch (TabuleiroException e)
             {
                 Console.WriteLine(e.Message);
             }
+
+            Console.ReadLine();
         }
     }
 }
