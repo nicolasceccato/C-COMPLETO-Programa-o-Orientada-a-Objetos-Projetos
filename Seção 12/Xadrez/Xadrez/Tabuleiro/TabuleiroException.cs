@@ -1,8 +1,11 @@
-﻿namespace tabuleiro;
+﻿using System;
 
-public class TabuleiroException : Exception
+namespace tabuleiro
 {
-    public TabuleiroException(string? message) : base(message)
+    class TabuleiroException : Exception
     {
+        public TabuleiroException(string msg) : base(msg)
+        {
+        }
     }
 }

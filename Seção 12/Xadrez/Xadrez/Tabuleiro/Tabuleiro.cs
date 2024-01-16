@@ -1,6 +1,6 @@
 ﻿namespace tabuleiro
 {
-    public class Tabuleiro
+    class Tabuleiro
     {
         public int linhas { get; set; }
         public int colunas { get; set; }
@@ -33,7 +33,7 @@
         {
             if (existePeca(pos))
             {
-                throw new TabuleiroException("Já existe uma peça nessa posicao!");
+                throw new TabuleiroException("Já existe uma peça nessa posição!");
             }
 
             pecas[pos.linha, pos.coluna] = p;
@@ -67,7 +67,7 @@
         {
             if (!posicaoValida(pos))
             {
-                throw new TabuleiroException("Posicao inválida");
+                throw new TabuleiroException("Posição inválida!");
             }
         }
     }

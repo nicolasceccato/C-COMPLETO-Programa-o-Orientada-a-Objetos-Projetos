@@ -1,9 +1,8 @@
 ﻿using System;
 using tabuleiro;
 using xadrez;
-using xadrez_console;
 
-namespace Xadrez // Note: actual namespace depends on the project name.
+namespace xadrez_console
 {
     class Program
     {
